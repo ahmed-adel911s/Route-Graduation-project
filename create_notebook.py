@@ -27,7 +27,7 @@ We will use the **RecursiveCharacterTextSplitter** from LangChain.
 Because this is technical documentation, we split it into fixed-size chunks of 1000 characters with a 150-character overlap to preserve context between chunks."""
 
 code2 = """from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Create Document objects
 docs = []
