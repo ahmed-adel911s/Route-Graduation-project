@@ -10,3 +10,4 @@ python-dotenv
 jupyter
 nbformat
 sentence-transformers
+rank_bm25
