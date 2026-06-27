@@ -9,3 +9,4 @@ faiss-cpu
 python-dotenv
 jupyter
 nbformat
+sentence-transformers
