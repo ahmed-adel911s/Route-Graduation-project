@@ -1,5 +1,7 @@
 # 🚀 Route Graduation Project: Intelligent RAG System
 
+**🔗 GitHub Repository:** [https://github.com/ahmed-adel911s/Route-Graduation-project](https://github.com/ahmed-adel911s/Route-Graduation-project)
+
 This repository contains a complete, production-ready Intelligent Retrieval-Augmented Generation (RAG) system built for Microsoft Azure Official Documentation. 
 
 The architecture transitions from basic vector retrieval to a highly advanced Hybrid Search system with self-querying AI routing.
