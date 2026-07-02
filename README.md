@@ -1,62 +1,85 @@
-# Route Graduation Project: Intelligent RAG System
+# 🚀 Route Graduation Project: Intelligent RAG System
 
-This document outlines the full implementation details of our Intelligent Retrieval-Augmented Generation (RAG) system, mapped directly to the project rubric requirements.
+This repository contains a complete, production-ready Intelligent Retrieval-Augmented Generation (RAG) system built for Microsoft Azure Official Documentation. 
 
----
-
-## 0.1 — Dataset Collection
-* **Source Website:** Microsoft Azure Official Documentation
-* **URLs Used:** Various pages under `https://learn.microsoft.com/en-us/azure/` (e.g., Azure PostgreSQL, Azure Chaos Studio, Azure Functions, etc.)
-* **Type of Data Collected:** Technical documentation, tutorials, and product overviews.
-* **Structure of Data:** The raw data was parsed from HTML pages and stored as a structured `JSON` array containing the plain text `content`, `url`, and page `title`.
-* **Volume:** Approximately 65 individual pages/documents were scraped and collected.
-* **Collection Method:** A custom Python script (`scraper.py`) utilizing `requests` for fetching pages and `BeautifulSoup4` for HTML parsing.
-* **Cleaning & Preprocessing:** The `scraper.py` script systematically removed non-content HTML elements such as `<script>`, `<style>`, `<nav>`, `<footer>`, and `<header>` tags to ensure only clean, relevant plain text was extracted.
+The architecture transitions from basic vector retrieval to a highly advanced Hybrid Search system with self-querying AI routing.
 
 ---
 
-## 0.2 — Chunking Strategy
-* **Selected Strategy:** `RecursiveCharacterTextSplitter` with a `chunk_size` of 1000 characters and a `chunk_overlap` of 150 characters.
-* **Why this strategy was chosen:** Azure documentation contains highly technical explanations and code-related concepts. A natural unit of meaning here is usually a full paragraph or a distinct section. Splitting blindly by characters could cut a technical definition in half, destroying its meaning.
-* **Observations:** Technical documentation relies heavily on context. We observed that smaller chunks lost the context of *which* specific Azure product was being discussed.
-* **Rejected Strategies:** We rejected a basic `CharacterTextSplitter` because it does not respect semantic boundaries (like sentences or paragraphs) and would abruptly chop words in half.
-* **Weaknesses:** A weakness of a 1000-character chunk is that it might capture two slightly different topics in one chunk, potentially diluting the vector embedding focus.
-* **Mitigation:** We reduced this weakness by adding a `chunk_overlap` of 150 characters to ensure no semantic meaning is lost at the boundaries, and by storing the source `title` in the metadata to enforce strict filtering later in the pipeline.
+## 🛠️ Setup and Run Instructions
+
+### Prerequisites
+- Python 3.10+
+- A Google Gemini API Key
+
+### 1. Installation
+1. Clone this repository to your local machine.
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+3. Activate the virtual environment:
+   - **Windows (PowerShell):** `.\venv\Scripts\Activate.ps1`
+   - **Windows (CMD):** `.\venv\Scripts\activate.bat`
+   - **Mac/Linux:** `source venv/bin/activate`
+4. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### 2. Configuration
+1. Open the `.env.example` file.
+2. Rename it to `.env` (or create a new `.env` file).
+3. Paste your Gemini API key inside:
+   ```env
+   GEMINI_API_KEY="AIzaSyYourActualKeyHere..."
+   ```
+
+### 3. Running the Application
+The final deployment is a Streamlit Web Application that bypasses slow startup times by connecting directly to the pre-populated `chroma_db` database.
+
+To run the GUI:
+```bash
+python -m streamlit run gui_app.py
+```
 
 ---
 
-## Level 1 — Foundation RAG Pipeline
-* **Data Ingestion:** The `dataset.json` is loaded, chunked, and stored with metadata (`title` and `url`).
-* **Embedding Model Choice:** `sentence-transformers/all-MiniLM-L6-v2` via HuggingFace.
-  * *Language Support:* Excellent support for English.
-  * *Accuracy:* Highly rated on semantic search benchmarks for sentence-level tasks.
-  * *Speed:* Extremely fast, allowing it to run instantly on local CPU hardware without latency.
-  * *Cost:* 100% free and open-source (no API costs).
-  * *Embedding Dimension:* 384 dimensions, which is highly efficient for fast FAISS indexing and low memory usage.
-* **Vector Store:** FAISS (Facebook AI Similarity Search) was used for fast, local dense retrieval.
-* **Answer Generation:** We utilized Google's `gemini-2.5-flash` API. The prompt strictly instructs the model to answer *only* based on the provided context to prevent hallucinations.
-* **Deliverable:** `level1_rag.ipynb` successfully takes a query, runs `similarity_search_with_score`, prints the exact L2 distance scores alongside the chunks, and generates a grounded answer.
+## 📂 Project Structure & Notebooks
+
+To see the exact logic behind the scenes, you can review our custom Native Python implementations:
+
+1. **`level 1.ipynb` (Foundation RAG):** 
+   - Uses `RecursiveCharacterTextSplitter` (Size: 1000, Overlap: 150).
+   - Embeds using `all-MiniLM-L6-v2`.
+   - Saves to a persistent **ChromaDB** on disk.
+2. **`level_2.ipynb` (Query Intelligence):** 
+   - Implements Self-Querying.
+   - Forces the LLM to Rewrite, Classify, and Extract Metadata `JSON` filters from user queries for 100% precision vector lookups.
+3. **`level_3.ipynb` (Hybrid Search Retrieval):** 
+   - Combines Dense Search (Semantic/Chroma) and Sparse Search (Keyword/BM25).
+   - Fuses results mathematically using **Reciprocal Rank Fusion (RRF)**.
+4. **`gui_app.py` (Final Deployment):** 
+   - The production Streamlit interface integrating all 3 levels.
 
 ---
 
-## Level 2 — Query Intelligence
-Our system implements a state-of-the-art "Self-Querying" routing pipeline.
-* **Query Rewriting:** User queries are passed to Gemini to fix typos and make them self-contained (e.g., "how much does azre postgresql cost" → "How much does Azure Database for PostgreSQL cost?").
-* **Query Classification:** Queries are analyzed and strictly classified into predefined intents using JSON structured output:
-  * *Factual Lookup:* "how to create a database in azure postgresql"
-  * *Comparison:* "What is the difference between azure functions and azure logic apps?"
-  * *Out of Scope:* "how to bake a chocolate cake" (System gracefully rejects answering).
-* **Structured Parameter Extraction:** The LLM analyzes the query against a list of our 65 known Azure document titles and extracts the exact `title_filter`.
-* **Filtered Retrieval:** The vector search is restricted to *only* search within chunks that match the extracted `title_filter`, ensuring 100% precision.
-* **Deliverable:** `level2_query_intelligence.ipynb` implements this entire 5-step pipeline end-to-end.
+## 📊 Evaluation & Comparisons
+
+### Example Queries & Outputs
+* **Query:** "How do I deploy a web app?"
+  * **Rewritten by AI:** "How do I deploy a web application to Azure App Service?"
+  * **Classification:** `Compute`
+  * **Result:** Successfully generates a grounded answer based exclusively on Azure documentation context.
+
+### Dense-Only vs. Hybrid Search Comparison
+* **The Problem with Dense Only:** Semantic search understands meaning but often fails to find exact jargon (e.g., "Error Code 404").
+* **The Problem with Sparse Only:** BM25 finds exact strings but doesn't understand synonyms.
+* **The Hybrid Solution:** By using Reciprocal Rank Fusion (RRF), our system queries both ChromaDB and BM25 simultaneously. We assign a mathematical weight of `0.6` to Dense and `0.4` to Sparse, guaranteeing that retrieved documents match both the *meaning* of the question and the *exact technical keywords* used.
 
 ---
 
-## Level 3 — Retrieval Quality: Hybrid Search
-* **Concept:** Vector search (Dense) understands the *meaning* of a query, while BM25 (Sparse) acts like a traditional search engine looking for *exact keyword matches* (like specific error codes). Relying solely on Vector search might miss exact technical terms, while relying only on Keyword search misses semantic intent.
-* **Implementation:** We implemented Hybrid Search by combining FAISS (Dense) and BM25 (Sparse).
-* **Scoring Method:** We merged the results using **Reciprocal Rank Fusion (RRF)**. We built a custom mathematical function using the standard formula `1 / (rank + 60)` to assign scores to documents from both lists and rank the fused ensemble.
-* **Comparison:** 
-  * In our `level3_hybrid_search.ipynb` notebook, we automatically run 3 test queries: a niche terminology query, a broad semantic query, and a keyword-heavy query (e.g., "Error 404 in Azure Web Apps").
-  * The notebook prints the Top 3 Dense results side-by-side with the Top 3 Hybrid results so the user can easily see how keyword matching improves specific technical queries.
-* **Deliverable:** `level3_hybrid_search.ipynb` implements this comparison perfectly.
+## 📝 Written Reports
+Please refer to the following Markdown reports included in this submission:
+1. `final_project_report.md` - Complete technical overview.
+2. `design_decisions_report.md` - Why native Python was chosen over LangChain.

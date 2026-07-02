@@ -1,0 +1,1003 @@
+URL: https://learn.microsoft.com/en-us/azure/developer/jenkins
+TITLE: Jenkins on Azure documentation - Jenkins | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Jenkins on Azure documentation
+Learn how to use Jenkins to automate continuous integration and continuous delivery on Azure.
+About Jenkins on Azure
+Overview
+About Jenkins on Azure
+Reference
+Jenkins plug-ins for Azure
+Architecture
+Jenkins architecture
+Install and configure Jenkins
+Quickstart
+Configure Jenkins using Azure CLI
+Download
+Sample jobs and scripts
+Scale using Jenkins and Azure
+Tutorial
+Scale with Azure Container Instances
+Scale with Azure VM agents
+CI/CD to Azure Functions
+Tutorial
+Deploy to Azure Functions
+CI/CD to AKS
+Tutorial
+Deploy from GitHub to AKS
+CI/CD to App Service
+Tutorial
+Create Azure resources in a pipeline job
+CI/CD to Azure DevOps
+Tutorial
+Deploy to a Linux VM using Azure DevOps Services
+CI/CD to Azure Storage
+Tutorial
+Using Azure Storage with a Jenkins C/I solution
+CI/CD to Linux VMs
+Tutorial
+Create a dev infrastructure on a Linux VM
+CI/CD to Service Fabric
+Tutorial
+Build and deploy an Azure Service Fabric app
+CI/CD to Azure Spring Apps
+Tutorial
+Deploy to Azure Spring Apps using the Azure CLI
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/
+TITLE: Azure Databricks documentation | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Databricks documentation
+Learn Azure Databricks, a unified analytics platform for data analysts, data engineers, data scientists, and machine learning engineers.
+About Azure Databricks
+Overview
+What is Azure Databricks?
+What is a data lakehouse?
+Azure Databricks components
+Integrations
+Get started
+Get started
+Sign up for Azure Databricks
+Get started tutorials
+Workspace UI
+Data guides
+Data management
+Concept
+Data engineering
+OLTP databases (Lakebase)
+Data warehousing
+AI & analytics
+Concept
+AI and machine learning
+Business intelligence
+Platform
+Concept
+Architecture
+Compute
+Notebooks
+Tables
+Apache Spark
+Integrations
+Concept
+Developers
+Technology partners
+Governance
+Concept
+Administration
+Security and compliance
+Data governance (Unity Catalog)
+Reference & resources
+Reference
+Reference
+Release notes
+Resources
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/search/
+TITLE: Azure AI Search documentation - Azure AI Search | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure AI Search documentation
+Learn how to use Azure AI Search for information retrieval at scale, with support for text, vector, and multimodal content in traditional and generative search scenarios.
+Get started
+Overview
+What's Azure AI Search?
+Features
+FAQ
+How-To Guide
+Create a search service
+Configure a search service
+Agentic retrieval (RAG)
+Concept
+Agentic retrieval
+Quickstart
+Use agentic retrieval
+How-To Guide
+Create a knowledge base
+Retrieve from a knowledge base
+Classic search
+Concept
+Full-text search
+Vector search
+Hybrid search
+Multimodal search
+Quickstart
+Use full-text search
+Use vector search
+How-To Guide
+Create a search index
+Create a vector index
+Query a vector index
+Code samples
+sample
+.NET samples
+Java samples
+JavaScript samples
+Python samples
+REST samples
+Vector samples
+References
+Reference
+Azure SDK for .NET
+Azure SDK for Java
+Azure SDK for JavaScript
+Azure SDK for Python
+Azure REST API
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/service-health/
+TITLE: Azure Service Health documentation - Azure Service Health | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Service Health documentation
+Azure Service Health helps you stay informed and get support when Azure services are having issues that affect you now, or could cause issues in the future. Azure Service Health includes three main components - Azure Status, Service Health, and Resource Health.
+About Azure Service Health
+Overview
+Azure Service Health overview
+Azure status page
+Service Health portal
+Resource Health overview
+video
+Video introduction to Azure Service Health
+Get started with Azure Service Health
+Get started
+Learn how to create Service health alerts
+Learn about Service issues
+Learn about Planned maintenance
+Learn how to configure subscription access to view security advisories
+Read an overview about Security advisories
+Learn about subscription and tenant accounts
+Learn how to report an impact
+Service health frequently asked questions
+video
+Video introduction on how to create Service Health alerts
+Get started with Azure Resource Health
+Get started
+See how to create Resource health alerts
+Learn how to use API endpoint to view security advisories
+Resource Graph tables overview
+See sample queries to use for Resource health
+Learn about Resource health REST API
+Resource health frequently asked questions
+Get notified
+How-To Guide
+Get notified when an issue with an Azure service affects you
+Get notified when your Azure resource becomes unavailable
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-edge-overview
+TITLE: About AKS Edge Essentials - AKS enabled by Azure Arc | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Exit editor mode
+Ask Learn
+Ask Learn
+Reading mode
+Table of contents
+Read in English
+Add
+Add to plan
+Edit
+Copy Markdown
+Print
+Note
+Access to this page requires authorization. You can try
+signing in
+or
+changing directories
+.
+Access to this page requires authorization. You can try
+changing directories
+.
+AKS Edge Essentials
+Feedback
+Summarize this article for me
+In this article
+Note
+AKS Edge Essentials is now generally available. Note that
+some features
+from the public preview are not yet supported.
+Azure Kubernetes Service Edge Essentials is an on-premises Kubernetes implementation of Azure Kubernetes Service (AKS) that automates running containerized applications at scale. AKS Edge Essentials includes a Microsoft-supported Kubernetes platform that includes a lightweight Kubernetes distribution with a small footprint and simple installation experience, making it easy for you to deploy Kubernetes on PC-class or "light" edge hardware. AKS Edge Essentials makes it easier to get started with your containerized application, bringing cloud-native best practices to your edge application.
+Key features
+The following sections describe some of the key features of AKS Edge Essentials.
+Simplified Kubernetes experience
+Unlike other Microsoft-supported platforms such as an Azure-hosted service (AKS) and on server-class hardware (AKS on Azure Local), AKS Edge Essentials is intended for static, pre-defined configurations and doesn't enable dynamic VM creation/deletion or cluster lifecycle management. Each machine in an AKS Edge Essentials cluster can only have one Linux and/or Windows VM. The Linux VM acts as the control node and worker node for Linux workloads in the Kubernetes cluster. Each machine with AKS Edge Essentials has a VM with restricted RAM, storage, and physical CPU cores according to a static allocation assigned at install time. This app-like configuration enables traditional Windows apps to run side-by-side; that is, interoperable alongside the AKS Edge Essentials VMs.
+While Kubernetes is an open-source orchestrator for automating container management at scale, AKS Edge Essentials simplifies on-premises Kubernetes deployment by making it easy to install, configure clusters, and manage application deployment across all clusters using a cloud-based management plane.
+Microsoft-managed Kubernetes platform
+AKS Edge Essentials includes the following features, managed by Microsoft:
+A lightweight, CNCF-conformant K8S and K3S distribution that is supported and managed by Microsoft. The key difference between AKS on Azure Local and AKS on Windows Server is that AKS on Windows Server has minimal compute and memory requirements (4 GB RAM and 2 vCPUs).
+Each Kubernetes node runs in its own Hyper-V isolated virtual machine and includes many features to help secure your container infrastructure.
+Microsoft-maintained Linux and Windows worker nodes virtual machine images adhere to security best practices. Microsoft also refreshes these images monthly with the latest security updates.
+Simplified installation experience with PowerShell cmdlets and agents to enable provisioning and control of VMs and infrastructure. Microsoft provides automatic updates for your Kubernetes deployment, so you stay up-to-date with the latest available Kubernetes versions.
+Locally install nodes on single or multiple machines
+AKS Edge Essentials simplifies the process of Kubernetes setup by providing PowerShell scripts and cmdlets to set up Kubernetes and create single or multi node Kubernetes clusters.
+Run Linux and Windows containers
+AKS Edge Essentials fully supports both Linux-based and Windows-based containers. When you create a Kubernetes cluster on AKS, you can choose to run Linux containers, Windows containers, or both.
+Azure Arc for management
+Once you have set up on-premises Kubernetes using AKS Edge Essentials and created a Kubernetes cluster, you can manage your Kubernetes infrastructure using the Azure portal, which provides a centralized management console for Kubernetes clusters running anywhere. In addition, various Azure Arc-enabled services like Azure Policy, Azure Monitor, and Azure ML services enable you to ensure compliance, monitor your clusters, and run cloud services on your edge clusters. It helps to ensure that applications and clusters are consistently deployed and configured at scale from source control.
+Why use AKS Edge Essentials?
+Interoperable with native Windows applications
+Windows provides a rich app ecosystem, user experience and robust security, and powers much of the infrastructure for industrial solutions today from HMIs, robots, PLCs, medical devices, etc. That said, many of the cloud-native workloads are built on Linux, and you're faced with the challenge of having to introduce Linux systems to take advantage of cloud-native solutions. These solutions require additional infrastructure management tools and skills to manage Linux systems in your environment. With AKS Edge Essentials, you get the best of both worlds. You can continue to use your Windows application investments and use existing hardware. In addition, you can also run cloud-native Linux workloads on Windows without the need to have new skills or a new control plane to manage the Linux devices. This enables you to use a broad set of AI capabilities to innovate quickly and drive your edge innovation forward with the least disruption. In addition, AKS Edge Essentials offers interoperability between native Windows applications and containerized Linux workloads.
+Kernel to cloud support
+With AKS Edge Essentials, you get the benefit of having a fully supported stack from kernel to cloud. Microsoft provides a 10-year LTSC for the host OS. The Linux VM is fully managed and is based on a curated CBL-Mariner image, which is a lightweight image that helps reduce attack surface, ensures better performance, and provides less overhead for patching vulnerabilities. In addition, Microsoft has a robust testing matrix for individual Mariner packages and extensive regression tests prior to an image release, reducing the likelihood of downtime for the service. VM policies ensure A/B updates of the VM image and the Kubernetes distribution ensures your Kubernetes stack is the latest and greatest. You can manage all your containers and Kubernetes configs across cloud and on-premises with Arc-enabled Kubernetes. This multi-layered approach ensures that the entire software stack is secure and updated so that your business applications can run reliably.
+Cloud services enabled at the edge
+Once your AKS Edge Essentials cluster is connected to Azure Arc, it extends the Azure platform to the edge with core services such as governance, monitoring, application, ML, and data services. It also helps bring DevOps practices anywhere and build iteratively using GitOps and Flux to seamlessly manage application deployments.
+Key Management Service (KMS) provider for secret encryption
+AKS Edge Essentials supports the
+Key Management Service (KMS) provider
+, which provides encryption at rest for Kubernetes secrets stored in the etcd key-value store. KMS provider is enabled by default on version 1.12.269.0 and later. For more information, see
+Validate and Troubleshoot encryption to an AKS Edge Essentials cluster
+.
+Next steps
+Read about
+deployment options
+Feedback
+Was this page helpful?
+Yes
+No
+No
+Need help with this topic?
+Want to try using Ask Learn to clarify or guide you through this topic?
+Ask Learn
+Ask Learn
+Suggest a fix?
+Additional resources
+Last updated on
+2025-10-24
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/dms/
+TITLE: Azure Database Migration Service documentation | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Database Migration Service documentation
+Azure Database Migration Service enables seamless migrations from multiple database sources to Azure Data platforms with minimal downtime. The service uses the Azure Arc migration readiness assessment to generate assessment reports that provide recommendations to guide you through the changes required before performing a migration. When you're ready to begin the migration process, Azure Database Migration Service performs all the required steps.
+About Azure Database Migration Service
+Overview
+What is Azure Database Migration Service?
+Get started
+Migrate databases at scale using automation
+Database migration scenario status
+Quickstart
+SQL Server migration one-click PoC
+video
+Introduction to Azure Data Migration Service
+Cloud Migration Strategies and Phases in Migration Journey
+Discover and Assess SQL Server Data Estate Migrating to Azure SQL
+Get Started with the New Database Migration Guides to Migrate Your Databases to Azure
+What's new
+Check out our blog
+Migrate SQL Server to Azure SQL
+Tutorial
+Migrate to Azure SQL Database (offline)
+Migrate to Azure SQL Managed Instance
+Migrate to SQL Server on Azure Virtual Machines (online)
+Migrate to SQL Server on Azure Virtual Machines (offline)
+Reference
+Custom roles for migrations from SQL Server to Azure SQL Database
+Custom roles for migrations from SQL Server to Azure SQL Managed Instance
+Custom roles for migrations from SQL Server to SQL Server on Azure VMs
+Migrate open-source databases to Azure
+Tutorial
+Migrate to Azure DB for PostgreSQL online via the portal
+Migrate to Azure DB for PostgreSQL online via the CLI
+Migrate RDS PostgreSQL to Azure DB for PostgreSQL
+Migrate between Azure DB for PostgreSQL instances online via the portal
+Migrate to Azure DB for MySQL - offline
+Migrate to Azure DB for MySQL - online
+Migrate to Azure DB for MySQL - physical data files
+Migrate to Azure Cosmos DB for MongoDB - online
+Reference
+Known issues - Online migration to Azure DB for PostgreSQL
+Known issues - Migration from MongoDB to Azure Cosmos DB
+Tools and guidance
+Reference
+Services and tools available for data migration scenarios
+Azure Database Migration Guide
+Azure Migrate
+SQL Database Projects
+SQL Server Migration Assistant
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/migration/migrate-to-azure
+TITLE: Migrate Workloads to Azure | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Exit editor mode
+Ask Learn
+Ask Learn
+Reading mode
+Table of contents
+Read in English
+Add
+Add to plan
+Edit
+Copy Markdown
+Print
+Note
+Access to this page requires authorization. You can try
+signing in
+or
+changing directories
+.
+Access to this page requires authorization. You can try
+changing directories
+.
+Migrate workloads to Azure
+Feedback
+Summarize this article for me
+In this article
+The Azure Migration Hub provides prescriptive, opinionated guidance to help workload teams plan and implement their migration to Azure. It covers migrations from on-premises environments and cloud platforms such as Amazon Web Services (AWS) and Google Cloud Platform (GCP).
+Important
+This content covers single-workload migrations. It doesn't cover full datacenter migrations, region relocations, or hybrid workloads that run concurrently on multiple clouds.
+Migration to Azure involves networking, identity, databases, compute, storage, and the custom integrations that your team built over the years. Multiple articles and guides provide guidance for these components.
+This article helps you identify which guidance applies to your situation. Based on where your workload runs today, it directs you to the right migration guide. It also explains general migration terminology and strategies.
+Who should read this article
+This article helps workload architects and engineers get started with migrating workloads to Azure from AWS, GCP, or an on-premises datacenter. Use this guidance to decide whether you should rehost, replatform, or refactor.
+This guidance is for:
+Workload architects
+who redesign architecture aspects and validate the overall design to meet business requirements on Azure. Architects address gaps by considering the workload's specific characteristics and business constraints.
+Workload team members
+who need to understand how their responsibilities change during and after migration. For example, database administrators who manage scripts and perform daily backups on Amazon Relational Database Service must adapt to performing the same tasks on Azure SQL Database.
+This article directs you to the specific migration guide for your scenario, so you can begin planning immediately.
+Migration strategies
+Migration strategies vary in risk, effort, and reward. Choose a strategy based on your workload's complexity, timeline, and desired level of change.
+Rehost (lift and shift):
+Move the workload to Azure infrastructure without code changes. This approach is fast and low risk. It works well for straightforward workloads where speed matters most. For example, you might migrate a web application from a Windows Server virtual machine (VM) to an Azure VM. You get the benefits of Azure infrastructure without changing the workload's architecture or code. You change where the web application runs, not how it runs.
+Replatform (lift, adjust, and shift):
+Make minimal changes to take advantage of Azure platform services. For example, migrate a SQL Server database to Azure SQL Managed Instance to gain operational benefits without rewriting the application.
+Refactor:
+Restructure code to improve performance, scalability, or maintainability without changing the workload's external behavior. For example, refactor a monolithic .NET application to run on Azure App Service by replacing Windows-specific file path handling, session state handling, and local disk logging. Refactoring requires more upfront effort but reduces long-term operational overhead.
+Rearchitect:
+Redesign the workload to take full advantage of Azure-native capabilities. For example, redesign a web application to use Azure Functions and Azure Cosmos DB instead of VMs and SQL Server. This approach requires significant code changes but delivers the greatest improvements in scalability, performance, and cost.
+Retire:
+Decommission workloads that you no longer need. Use this strategy for obsolete or redundant workloads, or when a software as a service (SaaS) solution can replace the functionality. For example, retire an on-premises file server after you migrate its data to Azure Files, and train users to access files on the new location.
+Replace:
+Adopt a ready-to-use cloud service instead of migrating your existing implementation. Consider this option when a SaaS solution meets your requirements better than moving the workload to Azure.
+Rebuild:
+Create a new implementation when the cost of other migration strategies outweighs the benefits. Rebuilding works well for legacy workloads that need fundamental changes to run effectively in the cloud. For example, rebuild a custom customer relationship management (CRM) system by using Dynamics 365 when the existing codebase is difficult to maintain or doesn't align well with Azure services.
+Retain:
+Keep the workload on-premises when compliance, latency, or technical constraints make migration impractical. For example, retain a legacy mainframe system that you can't easily rehost or refactor or that lacks a clear migration path to Azure.
+Most workload migrations in the Azure Migration Hub use a
+rehost or replatform
+approach. These strategies minimize risk by keeping the workload functionally identical. Functionality should meet the same key performance indicators (KPIs), service-level agreements (SLAs), and service-level objectives (SLOs) on Azure that it met on the source platform. Complete the migration first, then optimize and modernize.
+For more information, see
+Select a cloud migration strategy
+.
+The migration journey
+Every migration follows five phases. Some phases overlap, and you might revisit earlier phases as you learn more about the workload's requirements, but the sequence helps you track progress.
+Phase
+Tasks
+Outcome
+Plan
+Assess your current workload, identify dependencies, map source services to Azure equivalents, and define success criteria.
+Clear documentation of migration scope, required changes, and completion criteria.
+Prepare
+Set up your Azure environment, including landing zones, networking, identity, and governance. Design the target-state architecture.
+Configured Azure environment ready to receive the workload, with all architectural decisions resolved before migration begins.
+Execute
+Migrate infrastructure, data, and application components. Perform iterative testing and cutover.
+Workload components migrated to Azure. Production traffic redirected to Azure after successful validation of the workload.
+Evaluate
+Validate that the migrated workload meets functional, performance, security, and cost requirements against the baseline that you set in phase 1.
+Confirmation that the migration succeeds and the workload runs correctly on Azure.
+Decommission
+Retire the source environment. Remove resources, cancel subscriptions, and shut down the old platform.
+Source workload is shut down. Azure now runs the workload exclusively.
+Migration guidance
+This section lists the types of migration guidance that Azure provides. Each guide helps you plan and manage your migration.
+Cloud Adoption Framework for Azure
+The
+Cloud Adoption Framework for Azure
+covers organization-level planning. It describes how to structure your migration, what steps to take, and what to set up before you move workloads.
+If you're new to Azure, start here. The Cloud Adoption Framework guides you through organizational preparation. It describes Azure enrollment setup, platform landing zone configuration, and migration plan prioritization. Complete these foundational steps before you move workloads.
+Azure Architecture Center
+The
+Azure Architecture Center
+provides solution ideas, architectures, design patterns, and architecture guides for building workloads on Azure.
+Most migrations involve replatforming. You move both the infrastructure and management layer from your source cloud to Azure. Not all source components have a direct Azure equivalent, so you might need to redesign parts of the architecture. The Azure Architecture Center provides an overview of
+technology choices
+and helps you find the closest match.
+Azure Well-Architected Framework
+The
+Azure Well-Architected Framework
+provides principles for building reliable, secure, cost-effective, and efficient cloud systems. It includes general architecture guidance and service-specific guides for Azure services. These guides describe core best practices to help you make architectural decisions for your workload. Use them to evaluate your architecture after migration and find areas to improve.
+Start with your source platform
+To get started, compare the capabilities of your workload and its services with their closest Azure counterparts. The following articles include example scenarios and service-level migration guides to illustrate the comparisons.
+Migrate from AWS to Azure
+Migrate from GCP to Azure
+Migrate from on-premises to Azure
+Tools for migration
+Use the following tools to support migration tasks regardless of your source platform. They help you measure migration success against business goals.
+Tool
+Purpose
+Azure Migrate and Modernize
+Discover and assess migration assets, including infrastructure, applications, and data components.
+Well-Architected Review assessment of the source platform
+Review and measure the business goals of your architecture on the source platform. This assessment from your source cloud provider helps you set a baseline for your expectations on Azure.
+Azure Well-Architected Review assessment
+Evaluate your architecture decisions to identify regressions from the source baseline and explore optimization opportunities.
+Next step
+The Cloud Adoption Framework covers migration sequencing, wave planning, dependency mapping, and stakeholder alignment. For organization-level planning or help choosing a migration strategy, see
+Plan your migration
+.
+Feedback
+Was this page helpful?
+Yes
+No
+No
+Need help with this topic?
+Want to try using Ask Learn to clarify or guide you through this topic?
+Ask Learn
+Ask Learn
+Suggest a fix?
+Additional resources
+Last updated on
+2026-04-23
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/chaos-studio/
+TITLE: Azure Chaos Studio documentation - Azure Chaos Studio | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Chaos Studio documentation
+Azure Chaos Studio is a managed resilience testing service for Azure. Create a Workspace to discover your resources, run Scenarios that simulate real outage patterns, and get Scenario reports you can use for compliance, retrospectives, and stakeholder communication. You can also build custom chaos experiments for targeted fault injection.
+About Azure Chaos Studio
+Overview
+What is Azure Chaos Studio?
+Workspaces
+Scenarios
+Scenario reports
+Get started with Workspaces
+Quickstart
+Create a Workspace and run a Scenario
+Tutorial: PostgreSQL zone-down failover
+Concept
+Workspace permissions and identity
+Regional availability
+Experiments (classic)
+Quickstart
+Create and run a chaos experiment
+Concept
+Chaos experiments
+Faults and actions
+Targets and capabilities
+How-to guides
+How-To Guide
+Service-direct fault (portal)
+Agent-based fault (portal)
+AKS Chaos Mesh fault (portal)
+Dynamic targeting (portal)
+Entra ID outage template
+DNS outage (NSG)
+Chaos Studio agent
+Overview
+Agent overview
+Agent concepts
+Supported operating systems
+Install agent (portal)
+Verify agent status
+Troubleshoot the agent
+Reference
+Reference
+Fault library
+Supported resource types
+Service limits
+Limitations and known issues
+REST API
+Troubleshooting
+How-To Guide
+Troubleshoot common issues
+Agent known issues
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/developer/terraform/
+TITLE: Terraform on Azure documentation - Articles, samples, references, and resources - Terraform | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Terraform on Azure documentation
+Learn how to use Terraform to reliably provision virtual machines and other infrastructure on Azure.
+Getting started
+Overview
+About Terraform on Azure
+Terraform AzAPI provider
+Reference
+AzureRM provider versions
+Terraform Microsoft Graph provider
+Architecture
+Terraform AzureRM Provider
+Concept
+Comparing features of Terraform and Bicep
+Get started
+Install and configure Terraform
+Install the Microsoft Terraform Visual Studio Code extension
+Generate Terraform configurations using Azure Copilot
+Authenticate Terraform to Azure
+Store Terraform state in Azure Storage
+Azure Export for Terraform
+Overview
+Azure Export for Terraform overview
+Concept
+Azure Export for Terraform concepts
+Quickstart
+Export your first resources
+Export resources to HCL code
+How-To Guide
+Select custom resources
+Advanced scenarios
+Terraform Export in the Azure portal
+Overview
+Resource Provider Overview
+Quickstart
+Export your first Terraform resources in the Azure portal
+Popular Terraform Azure service articles
+Quickstart
+Create an Azure resource group using Terraform
+Create an AKS cluster
+Create a Linux VM
+Create a Windows VM
+Create an Azure key vault and key using Terraform
+Direct web traffic with Azure Application Gateway - Terraform
+Create a single database in Azure SQL Database using Terraform
+Create an Azure API Management service using Terraform
+Create an Azure Front Door Standard/Premium profile using Terraform
+Create an Azure Container Instance with a public IP address using Terraform
+Networking
+Quickstart
+Deploy with IP Groups - Terraform
+Deploy with multiple addresses - Terraform
+Deploy with Availability Zones - Terraform
+Create a NAT Gateway
+Create a private endpoint
+Manage infrastructure
+Quickstart
+Create a Linux VM
+Create a Linux VM cluster
+Create a Windows VM
+Create a Windows VM cluster
+How-To Guide
+Provision VM scale set with infrastructure
+Provision VM scale set from a Packer custom image
+Work with Containers (AKS, Application Gateway, ...)
+Quickstart
+Create an AKS cluster
+Create an ACI instance with a public IP address
+Deploy Azure Application Gateway v2
+How-To Guide
+Create an Application Gateway ingress controller in AKS
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/ai-services/content-safety/
+TITLE: Azure AI Content Safety documentation - Quickstarts, Tutorials, API Reference - Foundry Tools | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure AI Content Safety documentation
+The cloud-based Azure AI Content Safety API provides developers with access to advanced algorithms for processing images and text and flagging content that is potentially offensive, risky, or otherwise undesirable.
+About Azure AI Content Safety
+Overview
+What is Azure AI Content Safety?
+Get started
+Content Safety Studio
+Concept
+Harm categories
+What's new
+What's new in Azure AI Content Safety
+Image moderation
+Concept
+Harm categories
+Custom categories (preview)
+Quickstart
+Using Content Safety Studio
+Using the REST API or client SDKs
+multimodal (/azure/machine-learning/concept-retrieval-augmented-generation
+How-To Guide
+Use custom categories (standard) (preview)
+Use custom categories (rapid) (preview)
+Text moderation
+Concept
+Harm categories
+Custom categories (preview)
+Groundedness detection
+Quickstart
+Using Content Safety Studio
+Using the REST API or client SDKs
+Detect groundedness in LLM responses
+How-To Guide
+Use custom categories (standard) (preview)
+Use custom categories (rapid) (preview)
+Use a blocklist
+User input risk detection
+Concept
+Prompt Shields
+Quickstart
+Using the REST API
+Protected material detection
+Concept
+Protected material detection
+Quickstart
+Protected material for text
+Protected material for code
+Reference
+Reference
+Azure AI Content Safety API
+Azure AI Content Safety Python SDK
+Azure AI Content Safety C# SDK
+Azure PowerShell
+Azure Command-Line Interface (CLI)
+Help and feedback
+Reference
+Support and help options
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/azure-arc/
+TITLE: Azure Arc | Microsoft Learn
+------------------------------------------------------------
+Azure Arc documentation
+Simplify complex and distributed environments across on-premises, edge, and multicloud.
+Overview
+About Azure Arc
+sample
+Azure Arc Jumpstart
+Overview
+Azure Arc-enabled servers
+Overview
+Azure Arc-enabled Kubernetes
+Overview
+Azure Arc-enabled data services
+Overview
+SQL Server enabled by Azure Arc
+Azure Arc-enabled servers
+Connect hybrid machines
+Plan and deploy
+ESU for Windows Server 2012
+See more
+Azure Arc-enabled Kubernetes
+Connect a cluster to Azure Arc
+Apply configurations on clusters using GitOps
+Access connected clusters from anywhere
+See more
+Azure Arc-enabled data services
+Plan deployment
+Connectivity modes
+Create SQL Managed Instance
+See more
+SQL Server enabled by Azure Arc
+Connect SQL Server to Azure Arc
+Assess instance
+Configure advanced data security
+See more
+Azure Arc-enabled private clouds
+Azure Arc resource bridge
+Azure Arc-enabled VMware vSphere
+Azure Arc-enabled System Center Virtual Machine Manager
+Azure Arc VM management on Azure Local
+Training modules
+Introduction to Azure Arc
+Plan and deploy Azure Arc-enabled servers at scale
+Secure hybrid and multicloud machines
+Monitor hybrid and multicloud machines
+Explore more
+Azure Arc blog
+Get the latest news from the Azure Arc team.
+Azure Arc landing zone accelerator for hybrid and multicloud
+Establish patterns for building hybrid architectures.
+Azure Kubernetes Service (AKS) enabled by Azure Arc
+Extend AKS to your on-premises environment.
+Multicloud connector enabled by Azure Arc
+Connect non-Azure public cloud resources to centralize management and governance in Azure.
+Azure Container Apps on Azure Arc
+Run Container Apps on Azure Arc-enabled Kubernetes clusters.
+Azure IoT Operations Preview â enabled by Azure Arc
+Azure IoT Operations is a unified data plane for the edge that helps organizations deploy the industrial metaverse.
+Azure Arc site manager (preview)
+Use Arc sites to represent your on-premises environments and see centralized monitoring information across your edge infrastructure.
+Agentic Retrieval in Foundry Local
+Search on-premises data with generative AI using an agentic Retrieval-Augmented Generation (RAG) platform at the edge.
+Azure Container Storage enabled by Azure Arc
+A first-party storage system designed for Arc-connected Kubernetes clusters
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/developer/java/
+TITLE: Azure for Java Developer Documentation - Java on Azure | Microsoft Learn
+------------------------------------------------------------
+Azure for Java developer documentation
+Get started developing apps for the cloud with these tutorials and tools for Java developers.
+Get started with Java on Azure
+Code, deploy, and scale Java your way
+Code using the Java tools you know and love
+Deploy with confidence and ease
+Scale with security, monitoring, automation
+Choose the right Azure services
+See more
+Azure AI for Java
+Develop using Foundry Tools
+Enterprise chat using RAG
+Scale chat using RAG with Azure Container Apps
+See more
+Tools, IDEs, and supported JDKs
+Java support
+Java JDK installation
+Java Docker images for Azure
+See more
+Migrate to Azure
+GitHub Copilot modernization for Java
+Spring to Azure Container Apps
+Tomcat to Azure App Service
+See more
+Azure App Service
+Create a Java app
+Configure Java
+See App Service documentation
+Azure Container Apps
+Launch your first Java app
+Get started using IntelliJ
+Overview
+See more
+Secure apps using the Microsoft identity platform
+Overview
+Secure Spring Boot apps
+Secure Tomcat apps
+See more
+Azure SDK for Java
+Libraries, drivers, and Spring modules
+Azure development using Maven
+Introducing Azure SDK for Java
+See more
+Spring on Azure integration
+What is Spring Cloud Azure?
+Spring Data for Azure Cosmos DB
+Deploy a Spring Boot app
+See more
+Containerization
+Overview
+Establish a baseline
+Containerize for Kubernetes
+See more
+Azure Functions
+Create an Azure Function
+Create a Spring Cloud Function
+Developer guide
+See Azure Functions documentation
+Monitoring Java apps
+Get started with Application Insights
+Get started with ELK
+Monitor Spring apps
+See Azure Monitor documentation
+Securing Java apps
+Enable end-user authentication
+Microsoft Authentication Library
+Manage app secrets
+See Active Directory documentation
+Java EE, Jakarta EE, and MicroProfile
+Oracle WebLogic Server on Azure VMs
+Deploy a Java EE app to AKS
+See Java EE documentation
+Tools
+Azure Toolkit for IntelliJ
+Visual Studio Code
+Azure Toolkit for Eclipse
+Maven
+Gradle
+Azure CLI
+Jenkins on Azure
+Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/lighthouse/
+TITLE: Azure Lighthouse Documentation | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Lighthouse documentation
+Azure Lighthouse enables multitenant management with enhanced automation, scalability, and governance across resources and tenants.
+About Azure Lighthouse
+Overview
+What is Azure Lighthouse?
+Concept
+Architecture
+Cross-tenant management experiences
+Get started
+How-To Guide
+Onboard a customer to Azure Lighthouse
+Use just-in-time roles
+View and manage customers
+Concept
+Recommended security practices
+Tenants, roles, and users
+Cloud Solution Provider program considerations
+Enterprise scenarios
+ISV scenarios
+Marketplace offers
+How-To Guide
+Publish Managed Services offers
+Concept
+Managed Services offers in Microsoft Marketplace
+Customer experiences
+How-To Guide
+View and manage service providers
+Monitor managing tenant activity
+Samples and templates
+Deploy
+Azure Lighthouse samples repository (GitHub)
+Index of Azure Lighthouse samples
+Work with Azure services at scale
+How-To Guide
+Manage Microsoft Sentinel workspaces
+Use Azure Monitor Logs
+Deploy Azure Policy
+Manage hybrid machines with Azure Arc
+Manage Azure Migrate projects
+Reference - SDKs
+Reference
+Azure PowerShell
+Azure CLI
+REST
+.NET
+Python
+Terraform
+Ansible
+Reference - Downloads
+Download
+OpenAPI - 2022-10-01
+SDK for .NET - NuGet
+SDK for Python - PyPi
+Get involved
+Get started
+Microsoft Q&A for Azure Lighthouse
+Request product features
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/devops/
+TITLE: Azure DevOps documentation | Microsoft Learn
+------------------------------------------------------------
+Azure DevOps documentation
+Plan, build, test, and deploy with integrated DevOps tools for teams of any size.
+Overview
+What is Azure DevOps?
+What's new
+What's new in Azure DevOps?
+What's new
+What's new in Azure DevOps documentation?
+Get started
+Get started with Azure DevOps
+Azure Boards
+What is Azure Boards?
+Plan and track work
+Configure and customize boards
+Azure Pipelines
+What is Azure Pipelines?
+Create your first pipeline
+Troubleshoot pipeline runs
+Azure Artifacts
+What is Azure Artifacts?
+Connect to a feed
+Manage feed permissions
+Azure Repos
+What is Azure Repos?
+Clone an existing Git repository
+Review and merge code with pull requests
+Azure Test Plans
+What is Azure Test Plans?
+Create a test plan
+Run automated tests
+Azure DevOps Server
+Setup and upgrade requirements
+Install
+Administrative tasks reference
+Additional resources
+AI assistance
+Enable AI assistance with Azure DevOps MCP Server
+Set up remote Azure DevOps MCP Server (preview)
+Use GitHub Copilot with Azure Boards
+Security and access
+Make your Azure DevOps secure
+About permissions and security groups
+About access levels
+Integration
+Marketplace and extensibility
+GitHub integration with Azure DevOps
+Deploy to Azure with Azure Pipelines
+Troubleshooting
+Troubleshooting guides and FAQs
+Troubleshoot connecting to a project
+Get support and provide feedback
+Blogs
+-
+X
+-
+Stack Overflow
+-
+Issue Reporting
+-
+Developer Community
+-
+Service Status
+================================================================================
+
+URL: https://learn.microsoft.com/en-us/azure/container-instances/
+TITLE: Azure Container Instances documentation - serverless containers, on demand | Microsoft Learn
+------------------------------------------------------------
+Table of contents
+Read in English
+Edit
+Azure Container Instances documentation
+Run Docker containers on-demand in a managed, serverless Azure environment. Azure Container Instances is a solution for any scenario that can operate in isolated containers, without orchestration. Run event-driven applications, quickly deploy from your container development pipelines, and run data processing and build jobs.
+About Azure Container Instances
+Overview
+What is Azure Container Instances?
+Container groups
+FAQ
+Get started
+Quickstart
+Deploy container instance - CLI
+Deploy container instance - Portal
+Deploy container instance - ARM template
+Deploy container instance - Docker CLI
+Training
+Run Docker containers with Azure Container Instances
+Create multi-container groups
+Tutorial
+Deploy container group - YAML
+Deploy container group - ARM template
+Deploy container group - Docker Compose
+Deployment scenarios
+How-To Guide
+Connect to a virtual network
+Configure restart policy
+Set environment variables
+Manage container apps
+How-To Guide
+Stop and start containers
+Update running containers
+Share data between containers
+Integrate with Azure
+How-To Guide
+Deploy image from Azure Container Registry
+Use managed identity
+Mount an Azure file share
+Deploy confidential container groups
+Tutorial
+Deploy a confidential container group - Resource Manager
+Deploy a confidential container group - portal
+================================================================================
+
